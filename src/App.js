@@ -1,32 +1,28 @@
 import React, { Component } from 'react';
+import './App.css';
+import { CardList } from './components/card-list/card-list.component';
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      monsters: [
-        {
-          name: 'Demogorgons',
-        },
-        {
-          name: 'Demodogs',
-        },
-        {
-          name: 'The Mind Flayer',
-        },
-        {
-          name: 'The Vines',
-        },
-      ],
+      monsters: [],
     };
   }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/users').then((response) =>
+      response.json().then((users) => this.setState({ monsters: users }))
+    );
+  }
+
   render() {
     const { monsters } = this.state;
     return (
       <div className='App'>
-        {monsters.map((monster) => (
-          <h1>monster.name</h1>
-        ))}
+        <CardList monsters={monsters}>
+          
+        </CardList>
       </div>
     );
   }
