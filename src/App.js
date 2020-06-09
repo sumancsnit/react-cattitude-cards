@@ -6,23 +6,21 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      monsters: [],
+      cats: [],
     };
   }
 
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users').then((response) =>
-      response.json().then((users) => this.setState({ monsters: users }))
+      response.json().then((users) => this.setState({ cats: users }))
     );
   }
 
   render() {
-    const { monsters } = this.state;
+    const { cats } = this.state;
     return (
       <div className='App'>
-        <CardList monsters={monsters}>
-          
-        </CardList>
+        <CardList cats={cats}></CardList>
       </div>
     );
   }
