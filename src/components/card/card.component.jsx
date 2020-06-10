@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import './card.style.css';
 
 const Card = (props) => {
-  console.log('Card -> props', props);
   const { cat } = props;
   return (
     <div className='card-container'>

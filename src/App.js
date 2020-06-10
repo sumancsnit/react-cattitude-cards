@@ -7,6 +7,7 @@ export default class App extends Component {
     super();
     this.state = {
       cats: [],
+      serachInput: '',
     };
   }
 
@@ -17,10 +18,21 @@ export default class App extends Component {
   }
 
   render() {
-    const { cats } = this.state;
+    const { cats, serachInput } = this.state;
+    const filteredcats = cats.filter((cat) => {
+      console.log(cat.name.toLowerCase());
+      return cat.name.toLowerCase().includes(serachInput.toLowerCase());
+    });
     return (
       <div className='App'>
-        <CardList cats={cats}></CardList>
+        <input
+          type='search'
+          placeholder='Search cats...'
+          onChange={(e) => {
+            this.setState({ serachInput: e.target.value });
+          }}
+        />
+        <CardList cats={filteredcats}></CardList>
       </div>
     );
   }
