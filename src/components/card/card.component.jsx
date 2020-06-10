@@ -17,7 +17,7 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  cat: PropTypes.objectOf(PropTypes.number),
+  cat: PropTypes.objectOf(PropTypes.any),
 };
 
 export default Card;

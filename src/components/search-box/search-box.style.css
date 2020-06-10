@@ -2,8 +2,13 @@
   -webkit-appearance: none;
   border: none;
   outline: none;
-  padding: 10px;
-  width: 150px;
+  padding: 10px 15px 10px 45px;
+  height: 52px;
+  width: 100%;
+  max-width: 300px;
   line-height: 30px;
   margin-bottom: 30px;
+  border-radius: 3px !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
